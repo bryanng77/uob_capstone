@@ -582,7 +582,7 @@ public class BankTeller {
                     System.out.println("Selected 6. Back to Login Screen");
                     System.out.println("================================");
                     LOGGER.log(Level.INFO, "Returning back to Login Page");
-                    LoginPage.landingScreen();
+                    LoginPage.landingScreen(con);
                     break;
                 case 0:
                     System.out.println("Exit Application");
