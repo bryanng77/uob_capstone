@@ -310,7 +310,7 @@ public class SystemAdmin {
                     System.out.println("Selected 5. Back to Login Screen");
                     System.out.println("================================");
                     LOGGER.log(Level.INFO, "Returning back to Login Page");
-                    LoginPage.landingScreen();
+                    LoginPage.landingScreen(con);
                     break;
 
                 case 0:

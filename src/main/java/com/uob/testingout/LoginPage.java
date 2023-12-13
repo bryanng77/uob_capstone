@@ -1,7 +1,7 @@
 package com.uob.testingout;
 
 import java.sql.Connection;
-import java.sql.DriverManager;
+
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -13,7 +13,7 @@ public class LoginPage {
     private static final Logger LOGGER = Logger.getLogger(LoginPage.class.getName());
     static Scanner scan = new Scanner(System.in);
 
-    public static void landingScreen() throws SQLException {
+    public static void landingScreen(Connection con) throws SQLException {
 
         System.out.println("Welcome to Bank Interface!");
         System.out.println("==========================");
@@ -31,13 +31,13 @@ public class LoginPage {
         switch (portalinput) {
             case 1:
                 // System Admin Portal
-                systemAdminPortal();
+                systemAdminPortal(con);
                 LOGGER.info("Selected systemAdminPortal");
 
                 break;
             case 2:
                 // Bank Teller Portal
-                bankTellerPortal();
+                bankTellerPortal(con);
                 LOGGER.info("Selected bankTellerPortal");
 
             case 3:
@@ -49,7 +49,7 @@ public class LoginPage {
     }
 
     // System Admin Portal Method
-    public static void systemAdminPortal() throws SQLException {
+    public static void systemAdminPortal(Connection con) throws SQLException {
         LOGGER.info("Entered systemAdminPortal");
 
         int attempts = 0; // number of attempts upon start of program
@@ -102,9 +102,6 @@ public class LoginPage {
             }
 
             // Testing MySQL database connectivity
-
-            Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/uob_capstone", "root",
-                    "bryanng77");
 
             LOGGER.log(Level.INFO, "Database Successfully Connected to check if Username and Password Exists.");
 
@@ -164,7 +161,7 @@ public class LoginPage {
     }
 
     // Bank Teller Portal Menu
-    public static void bankTellerPortal() {
+    public static void bankTellerPortal(Connection con) {
         LOGGER.info("Entered bankTellerPortal");
         int attempts = 0; // number of attempts upon start of program
         int maximum_attempts = 3; // maximum number of attempts
@@ -222,8 +219,6 @@ public class LoginPage {
 
             // Testing MySQL database connectivity
             try {
-                Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/uob_capstone", "root",
-                        "bryanng77");
 
                 LOGGER.log(Level.INFO, "Database Successfully Connected to check if Username and Password Exists.");
 

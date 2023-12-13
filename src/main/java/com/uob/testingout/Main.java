@@ -27,9 +27,10 @@ public class Main {
         }
         LogManager.getLogManager().reset(); // we have to use LogManager to reset the process so that the removeHandler() will be applied.
         LOGGER.addHandler(fileHandler);
-
-   
-        LoginPage.landingScreen();
+        Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/uob_capstone", "root",
+                    "bryanng77");
+        
+        LoginPage.landingScreen(con);
 
     }
 }
