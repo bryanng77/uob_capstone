@@ -162,7 +162,7 @@ public class SystemAdmin {
     }
 
     public void updateTeller(Connection con) throws SQLException {
-            LOGGER.log(Level.INFO, "Entering Update Teller Selection.");
+        LOGGER.log(Level.INFO, "Entering Update Teller Selection.");
         try {
             String fName = "";
             String username = "";
@@ -262,7 +262,7 @@ public class SystemAdmin {
             System.out.println("Press any key to return to main menu");
             input.nextLine();
 
-            LOGGER.log(Level.INFO, "Returning back to System Admin Menu Page.");            
+            LOGGER.log(Level.INFO, "Returning back to System Admin Menu Page.");
             runSystemAdmin(con);
         }
     }
@@ -274,7 +274,7 @@ public class SystemAdmin {
         System.out.println("2. View Teller");
         System.out.println("3. Update Teller");
         System.out.println("4. Delete Teller");
-        System.out.println("5. Back to Login Screen");       
+        System.out.println("5. Back to Login Screen");
         System.out.println("0. Log out");
         System.out.println("Please enter a input : ");
         Scanner scan = new Scanner(System.in);
@@ -310,8 +310,7 @@ public class SystemAdmin {
                     System.out.println("Selected 5. Back to Login Screen");
                     System.out.println("================================");
                     LOGGER.log(Level.INFO, "Returning back to Login Page");
-                    LoginPage.landingScreen(con);
-                    break;
+                    return;
 
                 case 0:
                     LOGGER.info("User Exited the System");

@@ -16,7 +16,7 @@ public class Main {
         FileHandler fileHandler = null;
         try {
             fileHandler = new FileHandler(
-                    "../bryanfileloggingFile.log",true); // specify file path for log file and set append = true (to prevent creation of multiple log files)
+                    "../loggingFile.log",true); // specify file path for log file and set append = true (to prevent creation of multiple log files)
         } catch (Exception e) {
             System.out.println("error creating logger");
             return;

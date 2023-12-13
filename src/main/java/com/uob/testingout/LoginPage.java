@@ -15,37 +15,39 @@ public class LoginPage {
 
     public static void landingScreen(Connection con) throws SQLException {
 
-        System.out.println("Welcome to Bank Interface!");
-        System.out.println("==========================");
-        System.out.println("Please select your User Portal: ");
+        while (true) {
+            System.out.println("Welcome to Bank Interface!");
+            System.out.println("==========================");
+            System.out.println("Please select your User Portal: ");
 
-        System.out.println("1. System Admin Portal");
-        System.out.println("2. Bank Teller Portal");
-        System.out.println("3. Exit Login Page");
+            System.out.println("1. System Admin Portal");
+            System.out.println("2. Bank Teller Portal");
+            System.out.println("3. Exit Login Page");
 
-        System.out.println("=========================");
-        System.out.print("Enter your input here (1/2/3): ");
-        int portalinput = scan.nextInt();
-        scan.nextLine();
+            System.out.println("=========================");
+            System.out.print("Enter your input here (1/2/3): ");
+            int portalinput = scan.nextInt();
+            scan.nextLine();
 
-        switch (portalinput) {
-            case 1:
-                // System Admin Portal
-                systemAdminPortal(con);
-                LOGGER.info("Selected systemAdminPortal");
+            switch (portalinput) {
+                case 1:
+                    // System Admin Portal
+                    systemAdminPortal(con);
+                    LOGGER.info("Selected systemAdminPortal");
 
-                break;
-            case 2:
-                // Bank Teller Portal
-                bankTellerPortal(con);
-                LOGGER.info("Selected bankTellerPortal");
+                    break;
+                case 2:
+                    // Bank Teller Portal
+                    bankTellerPortal(con);
+                    LOGGER.info("Selected bankTellerPortal");
 
-            case 3:
-                System.exit(0);
-                LOGGER.info("User Exited the System");
+                case 3:
+                    System.exit(0);
+                    LOGGER.info("User Exited the System");
+
+            }
 
         }
-
     }
 
     // System Admin Portal Method
